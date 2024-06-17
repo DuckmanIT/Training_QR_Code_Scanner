@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QR_Test</string>
+    <string name="this_action_maybe_contains_ads">This action maybe contains ads</string>
+    <string name="qr_code_scanner">QR Code Scanner</string>
+    <string name="language">Languages</string>
+    <string name="vietnam">Vietnam</string>
+</resources>
