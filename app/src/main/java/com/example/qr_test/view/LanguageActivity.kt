@@ -1,11 +1,18 @@
-package com.example.qr_test
+package com.example.qr_test.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.qr_test.adapter.Language_Adapter
+import com.example.qr_test.model.Language_Model
+import com.example.qr_test.R
+import com.example.qr_test.databinding.LanguageItemBinding
+import com.example.qr_test.databinding.LanguageVietnameseBinding
+import com.example.qr_test.viewmodel.LanguageViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -16,24 +23,22 @@ class LanguageActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var languageList: List<Language_Model>
     private lateinit var languegeAdapter: Language_Adapter
+    private lateinit var binding : LanguageVietnameseBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.language_vietnamese)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.language_vietnamese)
         init()
 
-
-        // Lấy Intent mà SecondActivity được khởi chạy với
-        CoroutineScope(Dispatchers.Main).launch {
-            // Hiển thị LanguageActivity trong 2 giây
-            delay(2000)
-
-            // Khi kết thúc 2 giây, chuyển về MainActivity
-            startActivity(Intent(this@LanguageActivity, MainActivity::class.java))
-            finish()  // Kết thúc LanguageActivity sau khi chuyển về
+        binding.btnOKLanguage.setOnClickListener{
+            startActivity(Intent(this@LanguageActivity, IntroActivity::class.java))
         }
 
+        val view = binding.root
+        setContentView(view)
     }
+
+
 
     private fun init() {
         recyclerView = findViewById(R.id.rv_language)
@@ -45,4 +50,5 @@ class LanguageActivity : AppCompatActivity() {
         languegeAdapter = Language_Adapter(languageList)
         recyclerView.adapter = languegeAdapter
     }
+
 }

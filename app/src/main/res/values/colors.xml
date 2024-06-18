@@ -3,8 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="backGround">#EFFCF4</color>
-    <color name="blackIcon">#161616</color>
-    <color name="neutral">#535252</color>
+    <color name="neutral_1">#161616</color>
+    <color name="neutral_2">#535252</color>
     <color name="language_color">#161616</color>
-    <color name="green_back_ground">#3CB868</color>
+    <color name="primary">#3CB868</color>
+    <color name="neutral_3">#BABABA</color>
+    <color name="neutral_4">#E7E7E7</color>
+    <color name="background_screen">#EFFCF4</color>
 </resources>

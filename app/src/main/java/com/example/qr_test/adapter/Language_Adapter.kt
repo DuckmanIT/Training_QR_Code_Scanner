@@ -1,4 +1,4 @@
-package com.example.qr_test
+package com.example.qr_test.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.qr_test.R
+import com.example.qr_test.model.Language_Model
 
 class Language_Adapter(val listLanguage: List<Language_Model>): RecyclerView.Adapter<Language_Adapter.ViewHolder>() {
 
@@ -18,7 +20,6 @@ class Language_Adapter(val listLanguage: List<Language_Model>): RecyclerView.Ada
         val view = LayoutInflater.from(parent.context).inflate(R.layout.language_item, parent, false)
         return ViewHolder(view)
     }
-
     override fun getItemCount(): Int {
         return listLanguage.size
     }

@@ -6,7 +6,7 @@
     android:background="@color/backGround"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
 
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/inter_bold"
         android:textSize="24dp"
-        android:textColor="@color/blackIcon"
+        android:textColor="@color/neutral_1"
         app:layout_constraintTop_toBottomOf="@+id/qr_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
         android:text="@string/this_action_maybe_contains_ads"
         android:fontFamily="@font/inter_regular"
         android:textSize="14dp"
-        android:textColor="@color/neutral"
+        android:textColor="@color/neutral_2"
         app:layout_constraintBottom_toBottomOf="@id/line1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
