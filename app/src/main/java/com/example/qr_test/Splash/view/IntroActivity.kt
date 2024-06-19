@@ -1,5 +1,6 @@
-package com.example.qr_test.view
+package com.example.qr_test.Splash.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.ImageView
@@ -9,9 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.example.qr_test.R
-import com.example.qr_test.adapter.IntroAdapter
+import com.example.qr_test.Scan.ScanActivity
+import com.example.qr_test.Splash.adapter.IntroAdapter
 import com.example.qr_test.databinding.ActivityIntroBinding
-import com.example.qr_test.model.IntroModel
+import com.example.qr_test.Splash.model.IntroModel
 
 
 class IntroActivity : AppCompatActivity() {
@@ -25,20 +27,18 @@ class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
-//        val view = binding.root
-//        setContentView(view)
+
+
+
         viewPager = binding.introActVp2
         indicator = binding.introActIndicator
         btnNext = binding.introActBtnNext
         btnSkip = binding.introActBtnSkip
 
-        /* Adapter */
         viewPager.adapter = IntroAdapter(IntroModel.INTRO_ITEAM, this)
 
-        /* Indicator */
         initIndicator(IntroModel.INTRO_ITEAM.size)
 
-        /* Events */
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -68,21 +68,20 @@ class IntroActivity : AppCompatActivity() {
     }
 
     private fun handleFinish() {
+        startActivity(Intent(this, ScanActivity::class.java))
+        finish()
     }
 
     private fun initIndicator(size: Int) {
         for (i in 0 until size) {
             val dot = ImageView(this).apply {
-                /* State */
                 isSelected = i == 0
                 setImageResource(R.drawable.indicator_selector)
 
-                /* Size & Margin (-2 ~ WRAP_CONTENT) */
                 layoutParams = LinearLayout.LayoutParams(-2, -2).apply {
                     setMargins(0, 0, 8, 0)
                 }
 
-                /* Event */
                 setOnClickListener {
                     if (viewPager.currentItem != i) {
                         viewPager.setCurrentItem(i, true)

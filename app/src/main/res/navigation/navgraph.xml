@@ -7,12 +7,16 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.qr_test.view.MainActivity"
+        android:name="com.example.qr_test.Splash.view.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <activity
         android:id="@+id/languageActivity"
-        android:name="com.example.qr_test.view.LanguageActivity"
+        android:name="com.example.qr_test.Splash.view.LanguageActivity"
         android:label="LanguageActivity" />
+    <activity
+        android:id="@+id/introActivity"
+        android:name="com.example.qr_test.Splash.view.IntroActivity"
+        android:label="IntroActivity" />
 
 </navigation>

@@ -17,4 +17,8 @@
     <string name="third_description_intro">Style your QR codes to suit your needs.</string>
     <string name="next_intro">Next</string>
     <string name="start_intro">Start</string>
+    <string name="ic_menu_scan">Scan</string>
+    <string name="ic_menu_create">Create</string>
+    <string name="ic_menu_history">History</string>
+    <string name="ic_menu_settings">Settings</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.qr_test.viewmodel
+package com.example.qr_test.Splash.viewmodel
 
 import androidx.lifecycle.ViewModel
 

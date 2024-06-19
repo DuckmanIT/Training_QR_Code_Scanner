@@ -1,4 +1,4 @@
-package com.example.qr_test.view
+package com.example.qr_test.Splash.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

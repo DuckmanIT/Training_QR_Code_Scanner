@@ -1,4 +1,4 @@
-package com.example.qr_test.model
+package com.example.qr_test.Splash.model
 
 import com.example.qr_test.R
 

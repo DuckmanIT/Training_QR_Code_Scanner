@@ -1,4 +1,4 @@
-package com.example.qr_test.adapter
+package com.example.qr_test.Splash.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.qr_test.R
-import com.example.qr_test.model.Language_Model
+import com.example.qr_test.Splash.model.Language_Model
 
 class Language_Adapter(val listLanguage: List<Language_Model>): RecyclerView.Adapter<Language_Adapter.ViewHolder>() {
 

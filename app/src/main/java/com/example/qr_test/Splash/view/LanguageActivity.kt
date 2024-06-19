@@ -1,4 +1,4 @@
-package com.example.qr_test.view
+package com.example.qr_test.Splash.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.qr_test.adapter.Language_Adapter
-import com.example.qr_test.model.Language_Model
+import com.example.qr_test.Splash.adapter.Language_Adapter
+import com.example.qr_test.Splash.model.Language_Model
 import com.example.qr_test.R
 import com.example.qr_test.databinding.LanguageItemBinding
 import com.example.qr_test.databinding.LanguageVietnameseBinding
-import com.example.qr_test.viewmodel.LanguageViewModel
+import com.example.qr_test.Splash.viewmodel.LanguageViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -32,6 +32,7 @@ class LanguageActivity : AppCompatActivity() {
 
         binding.btnOKLanguage.setOnClickListener{
             startActivity(Intent(this@LanguageActivity, IntroActivity::class.java))
+            finish()
         }
 
         val view = binding.root

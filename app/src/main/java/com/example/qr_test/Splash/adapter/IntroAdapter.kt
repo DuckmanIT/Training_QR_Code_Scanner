@@ -1,4 +1,4 @@
-package com.example.qr_test.adapter
+package com.example.qr_test.Splash.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.qr_test.databinding.IntroItemBinding
-import com.example.qr_test.model.IntroModel
+import com.example.qr_test.Splash.model.IntroModel
 
 class IntroAdapter(
     private val listIntro: List<IntroModel>,
