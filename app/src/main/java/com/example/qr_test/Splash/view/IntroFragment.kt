@@ -2,38 +2,50 @@ package com.example.qr_test.Splash.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.qr_test.R
 import com.example.qr_test.Scan.ScanActivity
 import com.example.qr_test.Splash.adapter.IntroAdapter
-import com.example.qr_test.databinding.ActivityIntroBinding
 import com.example.qr_test.Splash.model.IntroModel
+import com.example.qr_test.databinding.ActivityIntroBinding
+import com.example.qr_test.databinding.FragmentIntroBinding
 
-
-class IntroActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityIntroBinding
+class IntroFragment : Fragment() {
+    private lateinit var binding: FragmentIntroBinding
     private lateinit var indicator: LinearLayout
     private lateinit var viewPager: ViewPager2
     private lateinit var btnNext: TextView
     private lateinit var btnSkip: TextView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+
+        binding = FragmentIntroBinding.inflate(inflater)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewPager = binding.introActVp2
         indicator = binding.introActIndicator
         btnNext = binding.introActBtnNext
         btnSkip = binding.introActBtnSkip
 
-        viewPager.adapter = IntroAdapter(IntroModel.INTRO_ITEAM, this)
+        viewPager.adapter = IntroAdapter(IntroModel.INTRO_ITEAM, requireContext())
 
         initIndicator(IntroModel.INTRO_ITEAM.size)
 
@@ -66,13 +78,11 @@ class IntroActivity : AppCompatActivity() {
     }
 
     private fun handleFinish() {
-        startActivity(Intent(this, ScanActivity::class.java))
-        finish()
     }
 
     private fun initIndicator(size: Int) {
         for (i in 0 until size) {
-            val dot = ImageView(this).apply {
+            val dot = ImageView(requireContext()).apply {
                 isSelected = i == 0
                 setImageResource(R.drawable.indicator_selector)
 
@@ -104,5 +114,14 @@ class IntroActivity : AppCompatActivity() {
 
     private fun updateBtnNextText(idx: Int) {
         btnNext.setText(if (idx == IntroModel.INTRO_ITEAM.size - 1) R.string.start_intro else R.string.next_intro)
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            IntroFragment().apply {
+                arguments = Bundle().apply {
+                }
+            }
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_selected">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="text_unselected">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+</resources>

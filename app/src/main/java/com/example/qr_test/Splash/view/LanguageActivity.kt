@@ -23,14 +23,14 @@ class LanguageActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var languageList: List<Language_Model>
     private lateinit var languegeAdapter: Language_Adapter
-    private lateinit var binding : LanguageVietnameseBinding
+    private lateinit var binding: LanguageVietnameseBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.language_vietnamese)
         init()
 
-        binding.btnOKLanguage.setOnClickListener{
+        binding.btnOKLanguage.setOnClickListener {
             startActivity(Intent(this@LanguageActivity, IntroActivity::class.java))
             finish()
         }
@@ -40,14 +40,11 @@ class LanguageActivity : AppCompatActivity() {
     }
 
 
-
     private fun init() {
         recyclerView = findViewById(R.id.rv_language)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-
         languageList = Language_Model.LANGUAGES
-
         languegeAdapter = Language_Adapter(languageList)
         recyclerView.adapter = languegeAdapter
     }

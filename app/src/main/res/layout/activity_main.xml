@@ -3,55 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/backGround"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Splash.view.MainActivity">
 
-
-    <ImageView
-        android:id="@+id/qr_icon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon"
-        android:paddingTop="184dp"
+    <fragment
+        android:id="@+id/nav_host_fragment_content_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/qr_code_scanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/qr_code_scanner"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/inter_bold"
-        android:textSize="24dp"
-        android:textColor="@color/neutral_1"
-        app:layout_constraintTop_toBottomOf="@+id/qr_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_end="24dp"
-        android:orientation="horizontal">
-    </androidx.constraintlayout.widget.Guideline>
-
-    <TextView
-        android:id="@+id/this_action_maybe_contains_ads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/this_action_maybe_contains_ads"
-        android:fontFamily="@font/inter_regular"
-        android:textSize="14dp"
-        android:textColor="@color/neutral_2"
-        app:layout_constraintBottom_toBottomOf="@id/line1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
+        app:navGraph="@navigation/nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
