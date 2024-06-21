@@ -8,4 +8,8 @@
         android:height="44dp">
 
     </size>
+    <solid android:color="@color/neutral_1_opacity_70">
+
+
+    </solid>
 </shape>

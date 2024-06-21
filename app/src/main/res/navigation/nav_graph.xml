@@ -25,5 +25,14 @@
     <fragment
         android:id="@+id/introFragment"
         android:name="com.example.qr_test.Splash.view.IntroFragment"
-        android:label="IntroFragment" />
+        android:label="IntroFragment" >
+        <action
+            android:id="@+id/action_introFragment_to_scQRFragment"
+            app:destination="@id/scQRFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scQRFragment"
+        android:name="com.example.qr_test.Scan.ScQRFragment"
+        android:label="fragment_sc_q_r"
+        tools:layout="@layout/fragment_sc_q_r" />
 </navigation>

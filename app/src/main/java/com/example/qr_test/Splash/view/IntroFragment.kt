@@ -1,6 +1,5 @@
 package com.example.qr_test.Splash.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,14 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.qr_test.R
-import com.example.qr_test.Scan.ScanActivity
 import com.example.qr_test.Splash.adapter.IntroAdapter
 import com.example.qr_test.Splash.model.IntroModel
-import com.example.qr_test.databinding.ActivityIntroBinding
 import com.example.qr_test.databinding.FragmentIntroBinding
 
 class IntroFragment : Fragment() {
@@ -78,6 +74,7 @@ class IntroFragment : Fragment() {
     }
 
     private fun handleFinish() {
+        findNavController().navigate(R.id.action_introFragment_to_scQRFragment)
     }
 
     private fun initIndicator(size: Int) {

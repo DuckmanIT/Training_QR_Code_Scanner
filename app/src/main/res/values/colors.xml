@@ -12,6 +12,7 @@
     <color name="background_screen">#EFFCF4</color>
     <color name="neutral_1_opacity_70">#B3161616</color>
     <color name="neutral_5">#FFFFFF</color>
+    <color name="primary_opacity_70">#B33CB868</color>
 </resources>
 
 <!--    100% — FF-->

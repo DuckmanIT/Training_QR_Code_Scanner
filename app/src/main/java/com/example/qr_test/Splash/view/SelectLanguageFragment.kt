@@ -14,7 +14,6 @@ import com.example.qr_test.R
 import com.example.qr_test.Splash.adapter.Language_Adapter
 import com.example.qr_test.Splash.model.Language_Model
 import com.example.qr_test.databinding.FragmentSelectLanguageBinding
-import com.example.qr_test.databinding.LanguageVietnameseBinding
 
 class SelectLanguageFragment : Fragment() {
 
