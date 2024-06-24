@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Scan.ScQRFragment">
+    >
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:name="com.example.qr_test.Scan.ScanQRFragment"-->
+<!--        android:id="@+id/Scan_QR_Preview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:defaultNavHost="true"-->
+<!--        app:navGraph="@navigation/scan_nav"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/nav_menu"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        >-->
+<!--    </androidx.fragment.app.FragmentContainerView>-->
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+    </androidx.camera.view.PreviewView>
+
+    <ImageView
+        android:id="@+id/btn_gallery"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/ellipse_background"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:src="@drawable/ic_gallery"
+        app:layout_constraintBottom_toBottomOf="@id/camera_preview"
+        android:layout_marginBottom="164dp"
+        android:layout_marginStart="21dp"
+        app:layout_constraintStart_toStartOf="@id/camera_preview"/>
+
+    <LinearLayout
+        android:layout_width="192dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintBottom_toBottomOf="@id/camera_preview"
+        app:layout_constraintEnd_toEndOf="@id/camera_preview"
+        app:layout_constraintStart_toStartOf="@id/camera_preview"
+        android:background="@drawable/rounded_tab_layout_indicator">
+
+
+        <LinearLayout
+            android:id="@+id/btn_scan_single"
+            android:layout_width="96dp"
+            android:layout_height="44dp"
+            android:background="@drawable/ic_mode_scan_background">
+
+            <ImageView
+                android:id="@+id/ic_scan_single"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_scan_single"
+                android:layout_marginStart="19.5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/content_scan_single"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/neutral_1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/scan_single"
+                android:paddingTop="12dp"
+                android:paddingStart="8dp"
+                android:textSize="14dp">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_scan_batch"
+            android:layout_width="96dp"
+            android:layout_height="44dp"
+            android:background="@drawable/ic_mode_scan_batch_background">
+
+
+            <ImageView
+                android:id="@+id/ic_scan_batch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_scan_batch"
+                android:layout_marginStart="14.5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/content_scan_batch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_batch"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/neutral_5"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="4.5dp"
+                android:paddingStart="8dp"
+                android:textSize="14dp">
+
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_flashlight"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/ellipse_background"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:src="@drawable/ic_flashlight"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintEnd_toEndOf="@id/camera_preview"
+        app:layout_constraintBottom_toBottomOf="@id/camera_preview"
+        android:layout_marginEnd="21dp"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bar"
+        app:itemPaddingTop="7dp"
+        app:itemPaddingBottom="7dp"
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@drawable/state_func_menu_selected"
+        app:itemTextColor="@drawable/state_func_menu_selected"
+        app:itemTextAppearanceActive="@style/text_selected"
+        app:itemTextAppearanceInactive="@style/text_unselected">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
