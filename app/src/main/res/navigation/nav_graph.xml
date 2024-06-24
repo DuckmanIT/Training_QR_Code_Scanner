@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment2"
-        android:name="com.example.qr_test.Splash.view.SplashFragment"
+        android:name="com.example.qr_test.presentation.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectLanguageFragment"
-        android:name="com.example.qr_test.Splash.view.SelectLanguageFragment"
+        android:name="com.example.qr_test.presentation.language.SelectLanguageFragment"
         android:label="SelectLanguageFragment" >
         <action
             android:id="@+id/action_selectLanguageFragment_to_introFragment"
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.qr_test.Splash.view.IntroFragment"
+        android:name="com.example.qr_test.presentation.intro.IntroFragment"
         android:label="IntroFragment" >
         <action
             android:id="@+id/action_introFragment_to_scQRFragment"
@@ -32,7 +32,16 @@
     </fragment>
     <fragment
         android:id="@+id/scQRFragment"
-        android:name="com.example.qr_test.Scan.ScQRFragment"
+        android:name="com.example.qr_test.presentation.scan_qr.ScQRFragment"
         android:label="fragment_sc_q_r"
-        tools:layout="@layout/fragment_sc_q_r" />
+        tools:layout="@layout/fragment_sc_q_r" >
+        <action
+            android:id="@+id/action_scQRFragment_to_scanResultFragment"
+            app:destination="@id/scanResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanResultFragment"
+        android:name="com.example.qr_test.presentation.scan_qr.ScanResultFragment"
+        android:label="fragment_scan_result"
+        tools:layout="@layout/fragment_scan_result" />
 </navigation>

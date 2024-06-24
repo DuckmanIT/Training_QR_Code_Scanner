@@ -9,7 +9,6 @@
         android:id="@+id/container_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:background="@drawable/third_back_ground"
         android:paddingVertical="12dp"
         android:layout_marginBottom="12dp"
