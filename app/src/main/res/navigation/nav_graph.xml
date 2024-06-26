@@ -27,21 +27,13 @@
         android:name="com.example.qr_test.presentation.intro.IntroFragment"
         android:label="IntroFragment" >
         <action
-            android:id="@+id/action_introFragment_to_scQRFragment"
-            app:destination="@id/scQRFragment" />
+            android:id="@+id/action_introFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/scQRFragment"
-        android:name="com.example.qr_test.presentation.scan_qr.ScQRFragment"
-        android:label="fragment_sc_q_r"
-        tools:layout="@layout/fragment_sc_q_r" >
-        <action
-            android:id="@+id/action_scQRFragment_to_scanResultFragment"
-            app:destination="@id/scanResultFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/scanResultFragment"
-        android:name="com.example.qr_test.presentation.scan_qr.ScanResultFragment"
-        android:label="fragment_scan_result"
-        tools:layout="@layout/fragment_scan_result" />
+        android:id="@+id/homeFragment"
+        android:name="com.example.qr_test.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
 </navigation>

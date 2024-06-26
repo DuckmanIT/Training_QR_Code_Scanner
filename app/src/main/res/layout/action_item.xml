@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_gravity="center">
     <ImageView
+        android:id="@+id/ic_action"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_share_email"
@@ -12,6 +13,7 @@
         android:layout_marginBottom="8dp"/>
 
     <TextView
+        android:id="@+id/ic_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Share"

@@ -39,8 +39,7 @@ class ScanResultFragment : Fragment() {
             ActionItemModel(R.drawable.ic_share_email, "Share")
         )
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems) {
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -72,8 +71,7 @@ class ScanResultFragment : Fragment() {
             SpannableString("Network name: ${wifi.networkName}\nSecurity:${wifi.security}\nPassword:${wifi.password}")
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -103,11 +101,10 @@ class ScanResultFragment : Fragment() {
             ActionItemModel(R.drawable.ic_share_email, "Share")
         )
         val content =
-            SpannableString("To: ${email.to}\nSubject:${email.subject}\nContent:${email.content}")
+            SpannableString("To: ${email.To}\nSubject:${email.subject}\nContent:${email.content}")
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -149,8 +146,7 @@ class ScanResultFragment : Fragment() {
         )
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -185,8 +181,7 @@ class ScanResultFragment : Fragment() {
         val content = SpannableString("Content: ${text.content}")
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -209,8 +204,7 @@ class ScanResultFragment : Fragment() {
         val content = SpannableString("Name: ${phone.name}\nTel:${phone.tel}")
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -241,8 +235,7 @@ class ScanResultFragment : Fragment() {
         val content = SpannableString("Longitude: ${geo.longitude}\nLatitude:${geo.latitude}")
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -275,8 +268,7 @@ class ScanResultFragment : Fragment() {
         )
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")
@@ -306,8 +298,7 @@ class ScanResultFragment : Fragment() {
         val content = SpannableString("Tel: ${sms.tel}\nContent:${sms.content}")
         binding.contentResult.text = content
 
-        val actionItemAdapter = ActionItemAdapter(actionItems)
-        actionItemAdapter.setOnClickListener {
+        val actionItemAdapter = ActionItemAdapter(actionItems){
             when (it) {
                 0 -> {
                     Log.d("ScanResultFragment", "initEmailView: Send Email")

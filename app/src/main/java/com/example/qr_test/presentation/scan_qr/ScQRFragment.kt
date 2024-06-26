@@ -15,6 +15,7 @@ import java.util.concurrent.Executors
 import android.Manifest
 import android.content.pm.PackageManager
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.camera.mlkit.vision.MlKitAnalyzer
 import androidx.camera.view.CameraController.COORDINATE_SYSTEM_VIEW_REFERENCED
@@ -24,17 +25,22 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.example.qr_test.presentation.scan_qr.QrCodeViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.internal.NavigationMenu
 import javax.inject.Inject
 
 class ScQRFragment : Fragment() {
     private lateinit var viewBinding: FragmentScQRBinding
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var barcodeScanner: BarcodeScanner
-//    private val qrViewModel : QrCodeViewModel by activityViewModels()
+    private val qrViewModel : QrCodeViewModel by activityViewModels()
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
 
     override fun onCreateView(
@@ -54,11 +60,12 @@ class ScQRFragment : Fragment() {
             )
         }
         cameraExecutor = Executors.newSingleThreadExecutor()
+
+
         return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         viewBinding.btnScanSingle.setOnClickListener() {
             changeScanMode(scanMode.SINGLE)
@@ -69,13 +76,17 @@ class ScQRFragment : Fragment() {
         }
 
         viewBinding.btnFlashlight.setOnClickListener() {
-            enableFlashLight()
+
         }
 
         viewBinding.btnGallery.setOnClickListener() {
 
         }
+
+
     }
+
+
 
     fun changeScanMode(mode: scanMode) {
         if (mode == scanMode.SINGLE) {
@@ -98,6 +109,7 @@ class ScQRFragment : Fragment() {
     fun enableFlashLight() {
 
     }
+
 
     private fun startCamera() {
         var cameraController = LifecycleCameraController(requireContext())
@@ -129,14 +141,15 @@ class ScQRFragment : Fragment() {
 //                val qrCodeDrawable = QrCodeDrawable(qrCodeViewModel)
 
                 requireActivity().runOnUiThread {
-                    val bitmap = previewView.bitmap
+//                    val bitmap = previewView.bitmap
 //                    qrViewModel.setQR(barcodeResults[0], bitmap!!)
 //                    Log.d("ImageQR", bitmap.toString())
                     val navController = findNavController()
-                    if (navController.currentDestination?.id == R.id.scQRFragment) {
-                        navController.navigate(R.id.action_scQRFragment_to_scanResultFragment)
+//                    Log.d(TAG,"Navigation ===> ")
+//                    if (navController.currentDestination?.id == R.id.scQRFragment) {
+//                        navController.navigate(R.id.action_scQRFragment_to_scanResultFragment)
                     }
-                }
+//                }
 
 //                previewView.setOnTouchListener(qrCodeViewModel.qrCodeTouchCallback)
 //                previewView.overlay.clear()

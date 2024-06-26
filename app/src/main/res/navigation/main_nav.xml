@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/scQRFragment2">
+
+    <fragment
+        android:id="@+id/scQRFragment2"
+        android:name="com.example.qr_test.presentation.scan_qr.ScQRFragment"
+        android:label="fragment_sc_q_r"
+        tools:layout="@layout/fragment_sc_q_r" />
+    <fragment
+        android:id="@+id/createQRFragment"
+        android:name="com.example.qr_test.presentation.create_qr.CreateQRFragment"
+        android:label="fragment_create_q_r"
+        tools:layout="@layout/fragment_create_q_r" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.qr_test.presentation.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.qr_test.presentation.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

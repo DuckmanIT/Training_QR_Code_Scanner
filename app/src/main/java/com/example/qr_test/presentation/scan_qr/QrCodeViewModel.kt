@@ -7,7 +7,6 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.google.mlkit.vision.barcode.common.Barcode
-
 class QrCodeViewModel(barcode: Barcode): ViewModel() {
 
 

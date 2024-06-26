@@ -72,7 +72,7 @@ class IntroFragment : Fragment() {
     }
 
     private fun handleFinish() {
-        findNavController().navigate(R.id.action_introFragment_to_scQRFragment)
+        findNavController().navigate(R.id.action_introFragment_to_homeFragment)
     }
 
     private fun initIndicator(size: Int) {
