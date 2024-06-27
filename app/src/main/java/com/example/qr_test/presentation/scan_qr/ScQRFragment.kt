@@ -13,6 +13,7 @@ import com.google.mlkit.vision.barcode.BarcodeScanner
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import android.Manifest
+import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import android.util.Log
 import android.view.MenuItem
@@ -33,8 +34,8 @@ import com.google.mlkit.vision.barcode.common.Barcode
 import com.example.qr_test.presentation.scan_qr.QrCodeViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.internal.NavigationMenu
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-
 class ScQRFragment : Fragment() {
     private lateinit var viewBinding: FragmentScQRBinding
     private lateinit var cameraExecutor: ExecutorService
@@ -137,19 +138,18 @@ class ScQRFragment : Fragment() {
                     return@MlKitAnalyzer
                 }
 
-                val qrCodeViewModel = QrCodeViewModel(barcodeResults[0])
 //                val qrCodeDrawable = QrCodeDrawable(qrCodeViewModel)
 
-                requireActivity().runOnUiThread {
-//                    val bitmap = previewView.bitmap
-//                    qrViewModel.setQR(barcodeResults[0], bitmap!!)
-//                    Log.d("ImageQR", bitmap.toString())
+                    val bitmap = previewView.bitmap
+                    bitmap?.let {
+                    qrViewModel.setQR(barcodeResults[0], it)
+                    Log.d("ImageQR", it.toString())
                     val navController = findNavController()
-//                    Log.d(TAG,"Navigation ===> ")
-//                    if (navController.currentDestination?.id == R.id.scQRFragment) {
-//                        navController.navigate(R.id.action_scQRFragment_to_scanResultFragment)
+                    Log.d(TAG,"Navigation ===> ")
+                    if (navController.currentDestination?.id == R.id.scQRFragment2) {
+                        navController.navigate(R.id.action_scQRFragment2_to_scanResultFragment)
                     }
-//                }
+                }
 
 //                previewView.setOnTouchListener(qrCodeViewModel.qrCodeTouchCallback)
 //                previewView.overlay.clear()
