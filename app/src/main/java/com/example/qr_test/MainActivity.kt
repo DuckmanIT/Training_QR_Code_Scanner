@@ -1,21 +1,13 @@
 package com.example.qr_test
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.example.qr_test.R
-import com.example.qr_test.presentation.scan_qr.QRModel
-import com.example.qr_test.presentation.scan_qr.QrCodeViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.example.qr_test.presentation.scan_qr.qr.QrCodeViewModel
 
 
 class MainActivity : AppCompatActivity() {

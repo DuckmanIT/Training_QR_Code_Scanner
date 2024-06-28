@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.create_qr.CreatePersonalQrFragment">
+<layout>
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="20dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.create_qr.personal.CreatePersonalQrFragment">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back"
-            android:layout_marginBottom="21dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="21dp"/>
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="21dp"
+                android:layout_marginBottom="21dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Create QR Email"
+                android:textColor="@color/neutral_1"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/create_personal_qr_item_rv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create QR Email"
-            android:fontFamily="@font/inter_bold"
-            android:textColor="@color/neutral_1"
-            android:textSize="20dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="14dp"/>
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            tools:itemCount="5"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/create_personal_qr_item"
+            tools:spanCount="5" />
+
     </LinearLayout>
-
-
-
-</androidx.core.widget.NestedScrollView>
+</layout>

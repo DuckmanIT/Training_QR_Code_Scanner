@@ -62,6 +62,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
 }
 
 kapt {

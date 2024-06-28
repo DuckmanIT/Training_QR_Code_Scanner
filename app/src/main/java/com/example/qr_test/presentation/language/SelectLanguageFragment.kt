@@ -24,8 +24,6 @@ class SelectLanguageFragment : Fragment() {
     private lateinit var binding: FragmentSelectLanguageBinding
     private lateinit var viewModel: LanguageViewModel
 
-
-
     private fun init() {
         recyclerView = binding.rvLanguage
         recyclerView.setHasFixedSize(true)

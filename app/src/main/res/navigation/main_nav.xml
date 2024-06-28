@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/scQRFragment2"
-        android:name="com.example.qr_test.presentation.scan_qr.ScQRFragment"
+        android:name="com.example.qr_test.presentation.scan_qr.qr.ScQRFragment"
         android:label="fragment_sc_q_r"
         tools:layout="@layout/fragment_sc_q_r" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/createQRFragment"
-        android:name="com.example.qr_test.presentation.create_qr.CreateQRFragment"
+        android:name="com.example.qr_test.presentation.create_qr.personal.CreateQRFragment"
         android:label="fragment_create_q_r"
         tools:layout="@layout/fragment_create_q_r" />
     <fragment
@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/scanResultFragment"
-        android:name="com.example.qr_test.presentation.scan_qr.ScanResultFragment"
+        android:name="com.example.qr_test.presentation.scan_qr.qr.ScanResultFragment"
         android:label="fragment_scan_result"
         tools:layout="@layout/fragment_scan_result" />
 </navigation>

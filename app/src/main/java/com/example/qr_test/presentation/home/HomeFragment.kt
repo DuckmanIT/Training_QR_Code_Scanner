@@ -26,9 +26,6 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater)
         val navController =
             childFragmentManager.findFragmentById(R.id.homeFrag_body)!!.findNavController()
-//        appBarConfiguration = AppBarConfiguration(navController.graph)
-//        val bottomNavigation = binding.navMenu
-//        NavigationUI.setupWithNavController(bottomNavigation, navController)
 
         binding.navMenu.setOnItemSelectedListener {
             if (it.itemId != navController.currentDestination?.id) {

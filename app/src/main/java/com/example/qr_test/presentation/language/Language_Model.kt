@@ -13,7 +13,7 @@ data class Language_Model(val icon: Int, val name: String, val code : String) {
             Language_Model(R.drawable.ic_england, "England", "en"),
             Language_Model(R.drawable.ic_canada, "Canada", "ca"),
             Language_Model(R.drawable.ic_ukraine, "Ukraine", "ur"),
-            Language_Model(R.drawable.ic_europe, "europe", "eu"),
+            Language_Model(R.drawable.ic_europe, "Europe", "eu"),
             Language_Model(R.drawable.ic_russia, "Russia", "ru"),
             Language_Model(R.drawable.ic_brazil, "Brazil", "br"),
             Language_Model(R.drawable.ic_austria, "Austria", "au"),
