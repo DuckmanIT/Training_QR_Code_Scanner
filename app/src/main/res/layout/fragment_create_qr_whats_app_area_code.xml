@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_bg"
+    tools:context=".presentation.create_qr.social.CreateQrWhatsAppAreaCodeFragment">
+    <LinearLayout
+        android:id="@+id/createQRAreaCodeAppbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="24dp"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+            <ImageView
+                android:id="@+id/createQRAreaCodeBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:padding="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_area_code"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/neutral_1"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/createQRAreaCodeSearchField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_rounded_area_code"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Search Area"
+            android:textColorHint="@color/neutral_3"
+            android:textColor="@color/neutral_1"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="14sp"
+            android:drawableEnd="@drawable/ic_search"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/createQRAreaCodeContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/primary_button_r16_bg_white"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createQRAreaCodeAppbar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:listitem="@layout/fragment_create_qr_whats_app_area_code_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>
