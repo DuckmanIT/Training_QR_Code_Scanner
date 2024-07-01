@@ -1,47 +1,75 @@
 package com.example.qr_test.presentation.create_qr.personallist
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.qr_test.R
+import com.example.qr_test.databinding.FragmentCreateQrContactBinding
+import com.example.qr_test.presentation.create_qr.CreateQRViewModel
+import com.example.qr_test.qr_engine.QRCodeGenerator
 
 
 class CreateQrContactFragment : Fragment() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
+    private val viewModel: CreateQRViewModel by activityViewModels()
 
-        }
-    }
+    private lateinit var binding: FragmentCreateQrContactBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_qr_contact, container, false)
+    ): View {
+        binding = FragmentCreateQrContactBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateQrContactFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CreateQrContactFragment().apply {
-                arguments = Bundle().apply {
+    private val listener = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
-                }
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            binding.createQRContactCreate.background = ContextCompat.getDrawable(
+                requireContext(),
+                if (binding.createQRContactPhoneNumber.text.isNotEmpty() && binding.createQRContactName.text.isNotEmpty() && binding.createQRContactEmail.text.isNotEmpty()) R.drawable.primary_button_r32
+                else R.drawable.primary_button_r32_primary_disable
+            )
+        }
+
+        override fun afterTextChanged(p0: Editable?) {}
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.createQRContactName.addTextChangedListener(listener)
+        binding.createQRContactEmail.addTextChangedListener(listener)
+        binding.createQRContactPhoneNumber.addTextChangedListener(listener)
+
+        binding.createQRContactCreate.setOnClickListener {
+            if (binding.createQRContactName.text.isNotEmpty() && binding.createQRContactPhoneNumber.text.isNotEmpty() && binding.createQRContactEmail.text.isNotEmpty()) {
+                val i =
+                    QRCodeGenerator.generateContactQRCode(
+                        binding.createQRContactName.text.toString(),
+                        binding.createQRContactPhoneNumber.text.toString(),
+                        binding.createQRContactEmail.text.toString(),
+                    )
+                viewModel.addBitmapToViewModel(i)
+                findNavController().navigate(R.id.action_createPersonalQrFragment_to_createQRResultFragment)
             }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.createQRContactName.removeTextChangedListener(listener)
+        binding.createQRContactEmail.removeTextChangedListener(listener)
+        binding.createQRContactPhoneNumber.removeTextChangedListener(listener)
     }
 }

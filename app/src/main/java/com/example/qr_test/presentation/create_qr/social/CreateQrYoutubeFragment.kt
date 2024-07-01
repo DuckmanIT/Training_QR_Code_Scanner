@@ -1,60 +1,98 @@
 package com.example.qr_test.presentation.create_qr.social
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.example.qr_test.R
+import com.example.qr_test.core.extension.convertContentToYoutube
+import com.example.qr_test.databinding.FragmentCreateQrYoutubeBinding
+import com.example.qr_test.presentation.create_qr.QR
+import com.example.qr_test.qr_engine.BitmapUtils
+import com.example.qr_test.qr_engine.QRCodeGenerator
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CreateQrYoutubeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CreateQrYoutubeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentCreateQrYoutubeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_qr_youtube, container, false)
+    ): View {
+        binding = FragmentCreateQrYoutubeBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateQrYoutubeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CreateQrYoutubeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private val listener = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            binding.createQRYoutubeCreate.background = ContextCompat.getDrawable(
+                requireContext(),
+                if (p0.toString()
+                        .isEmpty()
+                ) R.drawable.primary_button_r32_primary_disable else R.drawable.primary_button_r32
+            )
+        }
+
+        override fun afterTextChanged(p0: Editable?) {}
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.createQRYoutubeContent.addTextChangedListener(listener)
+
+        binding.createQRYoutubeCreate.setOnClickListener {
+            if (binding.createQRYoutubeContent.text.isNotEmpty()) {
+                val i =
+                    QRCodeGenerator.generateYoutubeQRCode(binding.createQRYoutubeContent.text.toString())
+                val internalPath =
+                    BitmapUtils.saveToInternalStorage(requireContext().applicationContext, i)
+                val bundle = Bundle().apply {
+                    putSerializable(
+                        "createdQR",
+                        QR.Youtube(
+                            internalPath,
+                            binding.createQRYoutubeContent.text.toString().convertContentToYoutube()
+                        )
+                    )
                 }
+                findNavController().navigate(R.id.action_createPersonalQrFragment_to_createQRResultFragment,bundle)
             }
+        }
+
+        binding.createQRYoutubeIDButton.setOnClickListener {
+            binding.createQRYoutubeIDButton.apply {
+                background =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.primary_button_r32)
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            }
+            binding.createQRYoutubeURLButton.apply {
+                background = null
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.neutral_1))
+            }
+        }
+        binding.createQRYoutubeURLButton.setOnClickListener {
+            binding.createQRYoutubeURLButton.apply {
+                background =
+                    ContextCompat.getDrawable(requireContext(), R.drawable.primary_button_r32)
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            }
+            binding.createQRYoutubeIDButton.apply {
+                background = null
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.neutral_1))
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.createQRYoutubeContent.removeTextChangedListener(listener)
     }
 }

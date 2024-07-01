@@ -6,7 +6,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.language.SelectLanguageFragment">
+        tools:context=".presentation.language.SelectLanguageFragment"
+        android:background="@color/primary_bg">
 
         <TextView
             android:id="@+id/language"

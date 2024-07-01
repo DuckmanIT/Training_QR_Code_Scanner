@@ -7,6 +7,8 @@
     android:paddingHorizontal="16dp"
     android:paddingTop="24dp"
     xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/neutral_5"
+    android:background="@color/primary_bg"
     tools:context=".presentation.settings.SettingsFragment">
 
     <TextView

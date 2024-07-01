@@ -13,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.qr_test.R
 import com.example.qr_test.core.helper.AppCache
 import com.example.qr_test.databinding.FragmentSelectLanguageBinding
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-
+@AndroidEntryPoint
 class SelectLanguageFragment : Fragment() {
     @Inject
     lateinit var cacheHelper: AppCache

@@ -26,7 +26,7 @@
                 android:layout_marginHorizontal="18dp"
                 android:background="@drawable/primary_button_r16_bg_white">
                 <TextView
-                    android:id="@+id/createQRFacebookIDButton"
+                    android:id="@+id/createQRTiktokIDButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -38,7 +38,7 @@
                     android:textColor="@color/white"
                     android:fontFamily="@font/inter_semibold"/>
                 <TextView
-                    android:id="@+id/createQRFacebookURLButton"
+                    android:id="@+id/createQRTiktokURLButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -64,7 +64,7 @@
                     android:textColor="@color/neutral_1"
                     android:layout_marginBottom="8dp"/>
                 <EditText
-                    android:id="@+id/createQRFacebookContent"
+                    android:id="@+id/createQRTiktokContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/enter_tiktok_id"
@@ -81,7 +81,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/createQRFacebookCreate"
+        android:id="@+id/createQRTiktokCreate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/create"

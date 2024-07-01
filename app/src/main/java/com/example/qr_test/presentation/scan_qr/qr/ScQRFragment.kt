@@ -138,9 +138,9 @@ class ScQRFragment : Fragment() {
                     Log.d("ImageQR", it.toString())
                     val navController = findNavController()
                     Log.d(TAG,"Navigation ===> ")
-                    if (navController.currentDestination?.id == R.id.scQRFragment2) {
-                        navController.navigate(R.id.action_scQRFragment2_to_scanResultFragment)
-                    }
+//                    if (navController.currentDestination?.id == R.id.scQRFragment2) {
+                        navController.navigate(R.id.action_homeFragment_to_scanResultFragment)
+//                    }
                 }
 
 //                previewView.setOnTouchListener(qrCodeViewModel.qrCodeTouchCallback)

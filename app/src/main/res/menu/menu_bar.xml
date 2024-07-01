@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/scQRFragment2"
+        android:id="@+id/ic_scan"
         android:title="@string/ic_menu_scan"
         android:icon="@drawable/ic_scan">
     </item>
 
     <item
-        android:id="@+id/createQRFragment"
+        android:id="@+id/ic_create"
         android:title="@string/ic_menu_create"
         android:icon="@drawable/ic_create">
     </item>
 
     <item
-        android:id="@+id/historyFragment"
+        android:id="@+id/ic_history"
         android:title="@string/ic_menu_history"
         android:icon="@drawable/ic_history">
     </item>
 
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/ic_settings"
         android:title="@string/ic_menu_settings"
         android:icon="@drawable/ic_setting">
     </item>

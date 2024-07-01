@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/neutral_5"
+    android:background="@color/primary_bg"
     tools:context=".presentation.create_qr.personal.CreateQRFragment">
 
     <LinearLayout

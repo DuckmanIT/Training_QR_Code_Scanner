@@ -8,8 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.qr_test.presentation.scan_qr.qr.QrCodeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var navController : NavController
     val qrViewModel : QrCodeViewModel by viewModels()

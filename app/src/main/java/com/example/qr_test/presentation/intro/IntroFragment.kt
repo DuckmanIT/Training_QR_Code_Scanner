@@ -12,7 +12,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.qr_test.R
 import com.example.qr_test.databinding.FragmentIntroBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IntroFragment : Fragment() {
     private lateinit var binding: FragmentIntroBinding
     private lateinit var indicator: LinearLayout

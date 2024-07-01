@@ -130,23 +130,22 @@
         android:layout_marginEnd="21dp"
         />
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/nav_menu"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="56dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/menu_bar"-->
-<!--        app:itemPaddingTop="7dp"-->
-<!--        app:itemPaddingBottom="7dp"-->
-<!--        app:itemIconSize="24dp"-->
-<!--        app:labelVisibilityMode="labeled"-->
-<!--        app:itemIconTint="@drawable/state_func_menu_selected"-->
-<!--        app:itemTextColor="@drawable/state_func_menu_selected"-->
-<!--        app:itemTextAppearanceActive="@style/text_selected"-->
-<!--        app:itemTextAppearanceInactive="@style/text_unselected">-->
-<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:id="@+id/nav_menu"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="56dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:menu="@menu/menu_bar"-->
+    <!--        app:itemPaddingTop="7dp"-->
+    <!--        app:itemPaddingBottom="7dp"-->
+    <!--        app:itemIconSize="24dp"-->
+    <!--        app:labelVisibilityMode="labeled"-->
+    <!--        app:itemIconTint="@drawable/state_func_menu_selected"-->
+    <!--        app:itemTextColor="@drawable/state_func_menu_selected"-->
+    <!--        app:itemTextAppearanceActive="@style/text_selected"-->
+    <!--        app:itemTextAppearanceInactive="@style/text_unselected">-->
+    <!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
